@@ -1,0 +1,94 @@
+// import { MongoClient } from "mongodb"
+
+// let client
+// let clientPromise
+
+// if (!process.env.MONGODB_URI) {
+//   throw new Error("Please add your Mongo URI to .env.local")
+// }
+
+// if (process.env.NODE_ENV === "development") {
+//   // Use global variable to preserve connection across hot reloads
+//   if (!global._mongoClientPromise) {
+//     client = new MongoClient(process.env.MONGODB_URI)
+//     global._mongoClientPromise = client.connect()
+//   }
+//   clientPromise = global._mongoClientPromise
+// } else {
+//   // In production, create a new client
+//   client = new MongoClient(process.env.MONGODB_URI)
+//   clientPromise = client.connect()
+// }
+
+// export default clientPromise
+
+// import { MongoClient } from "mongodb"
+
+// const uri = process.env.MONGODB_URI
+// const options = {}
+
+// if (!uri) {
+//   throw new Error("Please add your Mongo URI to .env.local")
+// }
+
+// let client
+// let clientPromise
+
+// if (process.env.NODE_ENV === "development") {
+//   // In development mode, use a global variable so the connection is preserved across hot reloads
+//   if (!global._mongoClientPromise) {
+//     client = new MongoClient(uri, options)
+//     global._mongoClientPromise = client.connect()
+//   }
+//   clientPromise = global._mongoClientPromise
+// } else {
+//   // In production mode, it's best to not use a global variable
+//   client = new MongoClient(uri, options)
+//   clientPromise = client.connect()
+// }
+
+// // Export a module-scoped MongoClient promise
+// export default clientPromise
+
+
+// lib/mongodb.js
+import { MongoClient } from "mongodb"
+
+const uri = process.env.MONGODB_URI
+
+if (!uri) {
+  throw new Error("Please add your Mongo URI to .env.local")
+}
+
+let client
+let clientPromise
+
+if (process.env.NODE_ENV === "development") {
+  // In development mode, use a global variable
+  if (!global._mongoClientPromise) {
+    client = new MongoClient(uri, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    })
+    global._mongoClientPromise = client.connect()
+  }
+  clientPromise = global._mongoClientPromise
+} else {
+  // In production mode, it's best to not use a global variable
+  client = new MongoClient(uri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  clientPromise = client.connect()
+}
+
+// Test the connection on startup
+clientPromise
+  .then(() => {
+    console.log("Connected to MongoDB successfully")
+  })
+  .catch((err) => {
+    console.error("Failed to connect to MongoDB:", err)
+  })
+
+export default clientPromise
