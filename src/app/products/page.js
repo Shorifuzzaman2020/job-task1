@@ -190,18 +190,7 @@ export default function ProductsPage() {
             ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {products.map(product => (
-                        // <div key={product._id} className="border p-4 rounded-lg shadow-sm">
-
-                        //     <h3 className="font-bold text-lg">{product.name}</h3>
-                        //     <p className="text-gray-600 my-2">{product.description}</p>
-                        //     <p className="font-semibold">${product.price}</p>
-                        //     <Link 
-                        //         href={`/products/${product._id}`} 
-                        //         className="inline-block mt-3 text-blue-600 hover:underline"
-                        //     >
-                        //         View Details
-                        //     </Link>
-                        // </div>
+                        
                         <div key={product._id} className="border p-4 rounded-lg shadow-sm hover:shadow-md transition">
 
                             {/* Product Image */}
