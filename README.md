@@ -18,7 +18,7 @@ It provides user authentication with Google OAuth and product management (list, 
 
 ## 🛠️ Setup & Installation
 
-```bash
+bash
 # 1. Clone the repository
 git clone https://github.com/your-username/my-app.git
 cd my-app
@@ -41,6 +41,8 @@ GOOGLE_CLIENT_SECRET="your-google-client-secret"
 
 # 4. Run the development server
 npm run dev
+
+---
 Visit <a href="http://localhost:3000" target="_blank">http://localhost:3000
 </a>
 📌 Route Summary
