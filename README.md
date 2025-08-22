@@ -17,19 +17,19 @@ It provides user authentication with Google OAuth and product management (list, 
 ## 🛠️ Setup & Installation
 
 ### 1. Clone the repository
-- ```bash
+ ```bash
 - git clone https://github.com/your-username/my-app.git
 - cd my-app
 
 ### 2. Install dependencies
 ```bash
-npm install
+- npm install
 
 ### 3. Configure Environment Variables
-Create a .env.local file in the root directory and add:
+- Create a .env.local file in the root directory and add:
 ```env
 # MongoDB connection
-MONGODB_URI="your-mongodb-connection-string"
+- MONGODB_URI="your-mongodb-connection-string"
 
 # NextAuth secret
 NEXTAUTH_SECRET="your-random-secret-key"
