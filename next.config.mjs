@@ -4,7 +4,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['i.ibb.co'], // allow ImgBB images
+    domains: ["i.ibb.co","i.ibb.co.com"], // allow ImgBB images
   },
 }
 

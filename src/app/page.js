@@ -35,8 +35,8 @@ export default function Home() {
   if (loading) {
     return (
       <main className="p-6">
-        <h2 className="text-2xl font-bold mb-4">Products</h2>
-        <p>Loading products...</p>
+        
+        <p>Loading...</p>
       </main>
     )
   }
@@ -52,22 +52,70 @@ export default function Home() {
     )
   }
   return (
-    <main className="min-h-screen flex flex-col">
+    <main className="min-h-screen flex flex-col mt-3 w-11/12 mx-auto ">
+      
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-blue-400 to-indigo-500 text-white py-20 px-6 text-center">
-        <h1 className="text-5xl font-extrabold mb-4 drop-shadow-lg">
-          Welcome to MyShop
-        </h1>
-        <p className="text-xl mb-8 drop-shadow-md">
-          Find the best products at unbeatable prices.
-        </p>
-        <Link
-          href="/products"
-          className="inline-block px-8 py-3 bg-white text-blue-600 font-semibold rounded-lg shadow-lg hover:bg-gray-100 transition"
-        >
-          Browse Products
-        </Link>
+      <section className="relative bg-gradient-to-r from-blue-200 to-indigo-800 text-white py-20 px-6 border-2 rounded-3xl">
+        <div className="container mx-auto flex flex-col md:flex-row items-center justify-around md:gap-4">
+          {/* Left: Circle Image Layout */}
+          <div className="relative w-80 h-80 flex items-center justify-center mb-10 md:mb-0">
+            <div className="absolute w-full h-full rounded-full border-4 border-white flex items-center justify-center">
+              {/* Small images placed around circle */}
+              <div className="absolute top-0 left-1/2 transform -translate-x-1/2">
+                <Image src="https://i.ibb.co.com/b5yv5P6Q/download-10.jpg" alt="product1" width={70} height={70} className="rounded-full shadow-lg" />
+              </div>
+              <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2">
+                <Image src="https://i.ibb.co.com/b5yv5P6Q/download-10.jpg" alt="product2" width={70} height={70} className="rounded-full shadow-lg" />
+              </div>
+              <div className="absolute left-0 top-1/2 transform -translate-y-1/2">
+                <Image src="https://i.ibb.co.com/2Ynn0X9T/download-8.jpg" alt="product3" width={70} height={70} className="rounded-full shadow-lg" />
+              </div>
+              <div className="absolute right-0 top-1/2 transform -translate-y-1/2">
+                <Image src="https://i.ibb.co.com/wFCdvGC7/download-7.jpg" alt="product4" width={70} height={70} className="rounded-full shadow-lg" />
+              </div>
+            </div>
+          </div>
+
+          {/* Right: Typing Effect */}
+          <div className="text-center md:text-left max-w-xl">
+            <h1 className="text-2xl md:text-5xl font-extrabold mb-4 drop-shadow-lg">
+              <span className="typing-text"></span>
+            </h1>
+            <p className="text-xl mb-8 drop-shadow-md">
+              Find the best products at unbeatable prices.
+            </p>
+            <Link
+              href="/products"
+              className="inline-block px-8 py-3 bg-white text-blue-600 font-semibold rounded-lg shadow-lg hover:bg-gray-100 transition"
+            >
+              Browse Products
+            </Link>
+          </div>
+        </div>
+
+        {/* Typing Animation */}
+        <style jsx>{`
+    .typing-text {
+      display: inline-block;
+      border-right: 3px solid white;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 4s steps(20, end) infinite alternate,
+                 blink 0.7s step-end infinite;
+    }
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
+    .typing-text::before {
+      content: "Welcome to MyShop";
+    }
+  `}</style>
       </section>
+
 
       {/* Product Highlights */}
       <section className="py-16 px-6 bg-gray-50">
@@ -121,7 +169,7 @@ export default function Home() {
                       )}
                       <Link
                         href={`/products/${product._id}`}
-                        className="inline-block text-blue-600 hover:underline text-sm"
+                        className="inline-block bg-blue-600 p-2 rounded-sm text-white hover:cursor-pointer text-sm"
                       >
                         View Details
                       </Link>
@@ -151,20 +199,7 @@ export default function Home() {
 
 
       {/* Footer */}
-      <footer className="bg-gray-800 text-white py-8 text-center">
-        <p>© 2025 MyShop. All rights reserved.</p>
-        <div className="mt-2 flex justify-center space-x-4">
-          <Link href="#" className="hover:text-blue-400 transition">
-            Facebook
-          </Link>
-          <Link href="#" className="hover:text-blue-400 transition">
-            Twitter
-          </Link>
-          <Link href="#" className="hover:text-blue-400 transition">
-            Instagram
-          </Link>
-        </div>
-      </footer>
+      
     </main>
   );
 }
