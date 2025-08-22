@@ -69,7 +69,7 @@ export default function ProductsPage() {
 
                             {/* Product Image */}
                             {product.image && (
-                                <div className="relative w-full h-48 mb-4">
+                                <div className="relative w-full h-100 mb-4">
                                     <Image
                                         src={product.image}
                                         alt={product.name}

@@ -1,19 +1,3 @@
-// "use client"
-// import { signIn } from "next-auth/react"
-
-// export default function LoginPage() {
-//   return (
-//     <div className="flex flex-col items-center justify-center h-screen">
-//       <h2 className="text-2xl font-bold mb-4">Login</h2>
-//       <button
-//         onClick={() => signIn("google", { callbackUrl: "/dashboard/add-product" })}
-//         className="px-4 py-2 bg-blue-500 text-white rounded"
-//       >
-//         Sign in with Google
-//       </button>
-//     </div>
-//   )
-// }
 
 
 "use client"
@@ -34,7 +18,7 @@ export default function LoginPage() {
 
   const handleSignIn = async () => {
     try {
-      await signIn("google", { callbackUrl: "/dashboard/add-product" })
+      await signIn("google", { callbackUrl: "/products" })
     } catch (error) {
       console.error("Sign in error:", error)
     }
