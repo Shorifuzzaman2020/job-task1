@@ -43,9 +43,9 @@ GOOGLE_CLIENT_SECRET="your-google-client-secret"
 npm run dev
 
 ---
-Visit <a href="http://localhost:3000" target="_blank">http://localhost:3000
+then Visit <a href="http://localhost:3000" target="_blank">http://localhost:3000
 </a>
-📌 Route Summary
+## 📌 Route Summary
 Pages
 <table> <tr><th>Route</th><th>Description</th></tr> <tr><td><code>/</code></td><td>Home page</td></tr> <tr><td><code>/login</code></td><td>Login with Google</td></tr> <tr><td><code>/products</code></td><td>List all products (protected)</td></tr> <tr><td><code>/products/[id]</code></td><td>View single product details</td></tr> </table>
 API Endpoints
