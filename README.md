@@ -1,6 +1,6 @@
 # My App
 
-A full-stack web application built with **Next.js 14**, **MongoDB**, and **NextAuth.js**.  
+A full-stack web application built with **Next.js 15**, **MongoDB**, and **NextAuth.js**.  
 It provides user authentication with Google OAuth and product management (list, add, view) features.
 
 ---
