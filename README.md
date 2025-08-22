@@ -6,68 +6,50 @@ It provides user authentication with Google OAuth and product management (list, 
 ---
 
 ## 🚀 Features
-- Google OAuth login using **NextAuth.js**
-- MongoDB database integration
-- REST API routes with Next.js App Router
-- Product management: list products, add new products
-- Protected routes after login
+<ul>
+  <li>Google OAuth login using <b>NextAuth.js</b></li>
+  <li>MongoDB database integration</li>
+  <li>REST API routes with Next.js App Router</li>
+  <li>Product management: list products, add new products</li>
+  <li>Protected routes after login</li>
+</ul>
 
 ---
 
 ## 🛠️ Setup & Installation
 
-### 1. Clone the repository
- ```bash
-- git clone https://github.com/your-username/my-app.git
-- cd my-app
-
-### 2. Install dependencies
 ```bash
-- npm install
+# 1. Clone the repository
+git clone https://github.com/your-username/my-app.git
+cd my-app
 
-### 3. Configure Environment Variables
-- Create a .env.local file in the root directory and add:
-```env
+# 2. Install dependencies
+npm install
+
+# 3. Configure environment variables
+# Create a .env.local file in the root directory and add:
+
 # MongoDB connection
-- MONGODB_URI="your-mongodb-connection-string"
+MONGODB_URI="your-mongodb-connection-string"
 
-# NextAuth secret
+# NextAuth secret (generate using: openssl rand -base64 32)
 NEXTAUTH_SECRET="your-random-secret-key"
 
 # Google OAuth credentials
 GOOGLE_CLIENT_ID="your-google-client-id"
 GOOGLE_CLIENT_SECRET="your-google-client-secret"
-👉 Replace values with your actual credentials.
-Generate NEXTAUTH_SECRET using:
-```bash
-openssl rand -base64 32
 
-### 4. Run the development server
-```bash
+# 4. Run the development server
 npm run dev
-Visit http://localhost:3000
-
+Visit <a href="http://localhost:3000" target="_blank">http://localhost:3000
+</a>
 📌 Route Summary
-
-| Route            | Description                   |
-| ---------------- | ----------------------------- |
-| `/`              | Home page                     |
-| `/login`         | Login with Google             |
-| `/products`      | List all products (protected) |
-| `/products/[id]` | View single product details   |
-
-| Route                     | Method | Description                |
-| ------------------------- | ------ | -------------------------- |
-| `/api/products`           | GET    | Fetch all products         |
-| `/api/products`           | POST   | Add a new product          |
-| `/api/auth/[...nextauth]` | -      | NextAuth.js authentication |
+Pages
+<table> <tr><th>Route</th><th>Description</th></tr> <tr><td><code>/</code></td><td>Home page</td></tr> <tr><td><code>/login</code></td><td>Login with Google</td></tr> <tr><td><code>/products</code></td><td>List all products (protected)</td></tr> <tr><td><code>/products/[id]</code></td><td>View single product details</td></tr> </table>
+API Endpoints
+<table> <tr><th>Route</th><th>Method</th><th>Description</th></tr> <tr><td><code>/api/products</code></td><td>GET</td><td>Fetch all products</td></tr> <tr><td><code>/api/products</code></td><td>POST</td><td>Add a new product</td></tr> <tr><td><code>/api/auth/[...nextauth]</code></td><td>-</td><td>NextAuth.js authentication</td></tr> </table>
 
 ✅ Tech Stack
-
-Next.js 14 (App Router)
-MongoDB
-NextAuth.js
-Tailwind CSS
-
+<ul> <li>Next.js 14 (App Router)</li> <li>MongoDB</li> <li>NextAuth.js</li> <li>Tailwind CSS</li> </ul> ```
 
 
